@@ -11,6 +11,7 @@ The results look like this on Linux:
 
 The first column is the number of threads and the second is the time in milliseconds.
 
+```
 1, 46, 1 # ctak(allocate/1) 2 iterations on 1 threads -> 46 milliseconds
 2, 127, 1 # ctak(allocate/1) 2 iterations on 2 threads -> 127 milliseconds
 3, 187, 1 # ctak(allocate/1) 2 iterations on 3 threads -> 187 milliseconds
@@ -18,10 +19,11 @@ The first column is the number of threads and the second is the time in millisec
 5, 371, 1 # ctak(allocate/1) 2 iterations on 5 threads -> 371 milliseconds
 6, 486, 1 # ctak(allocate/1) 2 iterations on 6 threads -> 486 milliseconds
 7, 624, 1 # ctak(allocate/1) 2 iterations on 7 threads -> 624 milliseconds
-
+```
 
 Full output...
 
+```
 1, 48, 0 # tak(allocate/0) 1000 iterations on 1 threads -> 48 milliseconds
 2, 48, 0 # tak(allocate/0) 1000 iterations on 2 threads -> 48 milliseconds
 3, 52, 0 # tak(allocate/0) 1000 iterations on 3 threads -> 52 milliseconds
@@ -50,4 +52,4 @@ Full output...
 5, 371, 1 # ctak(allocate/1) 2 iterations on 5 threads -> 371 milliseconds
 6, 486, 1 # ctak(allocate/1) 2 iterations on 6 threads -> 486 milliseconds
 7, 624, 1 # ctak(allocate/1) 2 iterations on 7 threads -> 624 milliseconds
-
+```
