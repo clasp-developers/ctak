@@ -39,19 +39,19 @@ int ctak_aux(int x, int y, int z, bool allocate)
         if (allocate) new Foo();
         throw ret;
     } else {
-        int rx;
+      int rx = 0;
         try {
             ctak_aux(x-1,y,z,allocate);
         } catch (Ctak& val) {
             rx = val.val;
         }
-        int ry;
+        int ry=0;
         try {
             ctak_aux(y-1,z,x,allocate);
         } catch (Ctak& val) {
             ry = val.val;
         }
-        int rz;
+        int rz=0;
         try {
             ctak_aux(z-1,x,y,allocate);
         } catch (Ctak& val) {
@@ -62,7 +62,7 @@ int ctak_aux(int x, int y, int z, bool allocate)
 }
 
 int ctak(int x, int y, int z, bool allocate,int times) {
-    int ret;
+    int ret=0;
     for (int ii=0; ii<times; ++ii) {
         try {
             ctak_aux(x,y,z,allocate);
