@@ -5,7 +5,15 @@ Run the tak and ctak functions using multiple C++ threads.
 The ctak function tests how efficiently the unix unwinds the stack using C++ exception
 handling when multiple threads are doing it in parallel.
 On macOS the performance as you increase the number of threads is not bad.
-On Linux (debian) - it's disasterous!
+On Linux (debian) - it's terrible.
+
+It doesn't help to use llvm libunwind.
+Fundamentally it comes down to that on Linux it walks every dynamically loaded library and that requires a mutex and on macOS it's doing some kind of clever caching.
+
+From mstorsjo on the llvm discord:
+
+The difference in libunwind between macOS and linux is this: https://github.com/llvm/llvm-project/blob/master/libunwind/src/AddressSpace.hpp#L397-L408 vs https://github.com/llvm/llvm-project/blob/master/libunwind/src/AddressSpace.hpp#L485-L571
+
 
 The results look like this on macOS:
 ```
