@@ -196,7 +196,7 @@ int main(int argc, char* argv[]) {
                 total += delta;
                 count++;
             }
-            std::cout << "Average millisecond slowdown as threads are added (closer to zero the better): " << (total/(double)count) << "\n";
+            std::cout << "Average slowdown as threads are added (closer to zero the better): " << (total/(double)count) << " milliseconds\n";
         }
     }
 }
