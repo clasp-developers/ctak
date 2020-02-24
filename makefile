@@ -4,6 +4,10 @@ CXXDIR = $(shell $(LLVM_CONFIG) --bindir)
 CXX = $(CXXDIR)/clang++
 
 
+# mac-ctak
+mac-ctak: ctak.cc
+	$(CXX) $(CXXFLAGS) -std=c++11 -stdlib=libc++ -o mac-ctak ctak.cc $(LDFLAGS) -L/usr/lib -L/usr/lib/x86_64-linux-gnu -lc++ -lc++abi
+
 # linux-ctak
 linux-ctak: ctak.cc
 	echo $(CXXFLAGS)
